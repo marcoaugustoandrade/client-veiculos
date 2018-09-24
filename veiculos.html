@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gerenciamento de veículos</title>
+    <link href="assets/css/bootstrap-reboot.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css//bootstrap-grid.min.css" rel="stylesheet">
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/android-icon-36x36.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/android-icon-36x36.png">
+    <link rel="manifest" href="assets/images/favicon/manifest.json">
+
+    <style>
+        .menu{
+            background-color: #3498db;
+        }
+        /* change the background color */
+        .navbar-custom {
+            background-color: #3498db;
+        }
+        /* change the brand and text color */
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-text {
+            color: rgba(255,255,255,.8);
+        }
+        /* change the link color */
+        .navbar-custom .navbar-nav .nav-link {
+            color: rgba(255,255,255,.5);
+        }
+        /* change the color of active or hovered links */
+        .navbar-custom .nav-item.active .nav-link,
+        .navbar-custom .nav-item:focus .nav-link
+        .navbar-custom .nav-item:hover .nav-link {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- menu -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <a class="navbar-brand" href="#">RESERVEIC</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Início</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Reservas</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Veículos <span class="sr-only">(current)</span></a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- menu -->
+        
+    <div class="container-fluid">
+
+        <h1 class="mt-4 mb-4">Gerenciamento de veículos</h1>
+
+        <div>
+            <div class="row">
+                <div class="col-10">
+                    <form class="form-inline mb-3">
+                        <div class="form-group">
+                            <input type="search" class="form-control">
+                        </div>
+                        <button class="btn btn-primary ml-2">
+                            <img src="assets/images/baseline-search-24px.svg" style="fill:#ffffff"> Pesquisar
+                        </button>
+                    </form>
+                </div>
+                <div class="col-2 text-right">
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                        <img src="assets/images/baseline-add-24px.svg"> Novo veiculo
+                    </button>
+                </div>
+            </div>    
+        </div>
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Veículo cadastrado com sucesso!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        
+        <table id="tabela-veiculos" class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Placa</th>
+                <th>Ano</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </table>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+        <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Inserir um novo veículo</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="id">Marca:</label>
+                        <input type="text" id="marca" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modelo">Modelo:</label>
+                        <input type="text" id="modelo" class="form-control" required>
+                    </div>                    
+                    <div class="form-group">
+                        <label for="placa">Placa:</label>
+                        <input type="text" id="placa" class="form-control" required>
+                    </div>                   
+                    <div class="form-group">
+                        <label for="ano">Ano:</label>
+                        <input type="number" id="ano" class="form-control" required>
+                    </div>                     
+                </form>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-dismiss="modal">Salvar</button>
+            </div>
+
+        </div>
+        </div>
+    </div>
+
+    <script src="assets/js/veiculos.js"></script>
+    
+    <script src="assets/js/jquery/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/pooper/popper.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+</body>
+</html>
